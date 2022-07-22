@@ -1,0 +1,50 @@
+<div [@.disabled]="temporaryDisabled">
+    <div class="side-menu" *ngIf="isShow" [@sideMenu]>
+        <div class="row">
+            <div>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="side-menu-container">
+                        <ul class="nav navbar-nav">
+
+                            <li id="dropdown" title="TaskAllocation" *ngIf="user?.rolename== 'Admin'">
+                                <a routerLink="./app-admin/app-task-allocation">
+                                    <i class="fa fa-tasks" [ngClass]="parentMenuString == 'Admin' ? 'is-active' : 'is-inactive'"></i>
+                                    <span [ngClass]="parentMenuString == 'Admin' ? 'is-active' : ''">Admin Task</span>
+                                </a>
+                            </li>
+
+                            <li id="dropdown" title="Mywork" *ngIf="user?.rolename== 'User'">
+                                <a routerLink="./app-my-work/app-mytask">
+                                    <i class="fas fa-atom" [ngClass]="parentMenuString == 'Mywork' ? 'is-active' : 'is-inactive'"></i>
+                                    <span [ngClass]="parentMenuString == 'Mywork' ? 'is-active' : ''">My Work Status</span>
+                                    <!-- <span class="caret"></span> -->
+                                </a>
+                            </li>
+
+                            <li id="dropdown" title="Myworkstatus" *ngIf="user?.rolename== 'Reviewer'">
+                                <a routerLink="./app-reviewer-work-status/app-reviewer-task">
+                                    <i class="fas fa-atom" [ngClass]="parentMenuString == 'ReviewerWorkTask' ? 'is-active' : 'is-inactive'"></i>
+                                    <span [ngClass]="parentMenuString == 'ReviewerWorkTask' ? 'is-active' : ''">My Work Status</span>
+
+                                </a>
+                            </li>
+
+                            <li id="dropdown" title="Ligand" *ngIf="user?.rolename== 'User' || user?.rolename== 'Reviewer'">
+                                <a routerLink="./app-stepper">
+                                    <i class="fas fa-atom" [ngClass]="parentMenuString == 'Stepper' ? 'is-active' : 'is-inactive'"></i>
+                                    <span [ngClass]="parentMenuString == 'Stepper' ? 'is-active' : ''">Ligand</span>
+                                    <!-- <span class="caret"></span> -->
+                                </a>
+                            </li>
+
+
+
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- <router-outlet></router-outlet> -->

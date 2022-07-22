@@ -1,0 +1,22 @@
+<mat-horizontal-stepper  labelPosition="bottom" #stepper (selectionChange)="onStepChange($event)">
+
+    <mat-step label="LIGAND" *ngIf="user?.rolename== 'User'" matStepperIcon="done">
+      <div style="padding-top: 1%;">
+        <app-ligand #Ligand *ngIf="selectedIndex == 0"></app-ligand>
+      </div>
+    </mat-step>
+  
+    <mat-step  label="ASSAY, MEASUREMENT, BIOLOGICALSYSTEM & TARGET" *ngIf="user?.rolename== 'User'">
+      <div style="padding-top: 1%;">
+        <app-assay #Assay *ngIf="selectedIndex == 1"></app-assay>
+      </div>
+    </mat-step>
+  
+    <mat-step label="REVIEWER SCREEN" *ngIf="user?.rolename== 'Reviewer'">
+      <div style="padding-top: 1%;">
+        <app-report></app-report>
+      </div>
+    </mat-step>
+  
+  </mat-horizontal-stepper>
+  

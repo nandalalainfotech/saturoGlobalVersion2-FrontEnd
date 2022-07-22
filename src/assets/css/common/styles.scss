@@ -1,0 +1,98 @@
+ @import "~ag-grid-community/dist/styles/ag-grid.css";
+ @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+ @import "~ag-grid-community/dist/styles/ag-theme-fresh.css";
+ @import "~ag-grid-community/dist/styles/ag-theme-material.css";
+ @import "~ag-grid-community/dist/styles/ag-theme-alpine.css";
+ @import "~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
+ @import "scrollbars.scss";
+ .ag-theme-alpine {
+     @include ag-theme-alpine(( cell-horizontal-border: solid ag-derived(secondary-border-color), ));
+     .ag-header-cell {
+         border-right: 1px solid ag-param(secondary-border-color);
+     }
+ }
+ 
+ .ag-theme-balham .ag-ltr .ag-cell {
+     border-right: 1px solid rgb(228, 225, 225);
+ }
+ 
+ .form-group input.ng-invalid.ng-touched, //  .form-group input.ng-invalid:focus,
+ .form-group select.ng-invalid.ng-touched,
+ .form-group textarea.ng-invalid.ng-touched,
+ .form-submit input.ng-invalid,
+ .form-submit select.ng-invalid,
+ .form-submit textarea.ng-invalid {
+     border-color: red;
+ }
+ 
+ .invalid-feedback {
+     color: red;
+ }
+ 
+ .mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container {
+     padding-right: 500px !important;
+     margin-left: 100px !important;
+ }
+ 
+ .mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon {
+     width: 45px !important;
+     height: 45px !important;
+     font-size: 15px !important;
+     margin-top: -11px !important;
+ }
+ 
+ .mat-step-text-label {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-size: 14px;
+     color: var(--color_l2) !important;
+ }
+ 
+ ::ng-deep .mat-step-header:hover {
+     background-color: #fff !important;
+ }
+ 
+ ::ng-deep .mat-step-header:active {
+     background-color: #fff !important;
+ }
+ 
+ ::ng-deep .mat-step-text-label {
+     background-color: #fff !important;
+ }
+ 
+ ::ng-deep .mat-step-text-label:active {
+     background-color: #fff !important;
+ }
+ 
+ ::ng-deep .mat-horizontal-stepper-header:hover {
+     pointer-events: none !important;
+     // background-color: #fff !important;
+ }
+ 
+ ::ng-deep .mat-horizontal-stepper-header:active {
+     pointer-events: none !important;
+     // background-color: #fff !important;
+ }
+ 
+ .modal-backdrop {
+     z-index: 0 !important;
+ }
+ 
+ .mat-form-field-infix {
+     display: block;
+     position: relative;
+     flex: auto;
+     min-width: 0;
+     width: 259px !important;
+     font-size: 15px !important;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+     color: var(--color_l2) !important;
+ }
+ 
+ .mat-step-header:hover {
+     background-color: rgb(255, 255, 255) !important;
+ }
+ 
+ .mat-step-header:focus {
+     z-index: 1;
+     background-color: rgb(255, 255, 255) !important;
+ }
