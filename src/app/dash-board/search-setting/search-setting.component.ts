@@ -1,21 +1,22 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { GridOptions } from 'ag-grid-community';
-import { deserialize } from 'serializer.ts/Serializer';
-import { CheckedComponent } from 'src/app/shared/checked/checked.component';
-import { IconRendererComponent } from 'src/app/shared/services/renderercomponent/icon-renderer-component';
-import { AssayManager } from 'src/app/shared/services/restcontroller/bizservice/Assay.service';
-import { AuthManager } from 'src/app/shared/services/restcontroller/bizservice/auth-manager.service';
-import { LigandManager } from 'src/app/shared/services/restcontroller/bizservice/ligandManager.service';
-import { LigandVersionManager } from 'src/app/shared/services/restcontroller/bizservice/ligandVersion.service';
-import { Assay001wb } from 'src/app/shared/services/restcontroller/entities/Assay001wb ';
-import { Ligand001wb } from 'src/app/shared/services/restcontroller/entities/Ligand001wb';
-import { Ligandversion001mb } from 'src/app/shared/services/restcontroller/entities/Ligandversion001mb';
-import { User001mb } from 'src/app/shared/services/restcontroller/entities/User001mb';
-import { CalloutService } from 'src/app/shared/services/services/callout.service';
-import { Utils } from 'src/app/shared/utils/utils';
+import { Component, HostBinding, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { ActivatedRoute } from "@angular/router";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { GridOptions } from "ag-grid-community";
+import { deserialize } from "serializer.ts/Serializer";
+import { CheckedComponent } from "src/app/shared/checked/checked.component";
+import { IconRendererComponent } from "src/app/shared/services/renderercomponent/icon-renderer-component";
+import { AssayManager } from "src/app/shared/services/restcontroller/bizservice/Assay.service";
+import { AuthManager } from "src/app/shared/services/restcontroller/bizservice/auth-manager.service";
+import { LigandManager } from "src/app/shared/services/restcontroller/bizservice/ligandManager.service";
+import { LigandVersionManager } from "src/app/shared/services/restcontroller/bizservice/ligandVersion.service";
+import { Assay001wb } from "src/app/shared/services/restcontroller/entities/Assay001wb ";
+import { Ligand001wb } from "src/app/shared/services/restcontroller/entities/Ligand001wb";
+import { Ligandversion001mb } from "src/app/shared/services/restcontroller/entities/Ligandversion001mb";
+import { User001mb } from "src/app/shared/services/restcontroller/entities/User001mb";
+import { CalloutService } from "src/app/shared/services/services/callout.service";
+import { Utils } from "src/app/shared/utils/utils";
+
 
 @Component({
   selector: 'app-search-setting',
@@ -24,7 +25,7 @@ import { Utils } from 'src/app/shared/utils/utils';
 })
 export class SearchSettingComponent implements OnInit {
 
-  public LigandForm: FormGroup | any;
+  // public LigandForm: FormGroup | any;
   submitted = false;
 
   frameworkComponents: any;

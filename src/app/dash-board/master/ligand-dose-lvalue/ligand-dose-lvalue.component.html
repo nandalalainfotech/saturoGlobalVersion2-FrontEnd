@@ -1,22 +1,27 @@
 <fieldset class="scheduler-border">
     <legend class="scheduler-border">Ligand-Dose(Low-end-value)</legend>
     <div class="formData">
-        <form [formGroup]="LowendvalueForm" (ngSubmit)="onLowendvalueClick($event, LowendvalueForm)" >
-            <div class="row">      
+        <form [formGroup]="LowendvalueForm" (ngSubmit)="onLowendvalueClick($event, LowendvalueForm)">
+            <div class="row">
                 <div class="col-xs-3 col-sm-3">
                     <div class="form-group">
-                        <label path="ligandDoseLvalue" for="series" cssClass="required">Ligand-Dose(Low-end-value)</label>
-                        <input class="form-control" name="ligandDoseLvalue" formControlName="ligandDoseLvalue"
-                            [ngClass]="{ 'is-invalid': submitted && f.ligandDoseLvalue.errors }">
+
+                        <mat-form-field style="margin-top: 20px;">
+                            <input placeholder="Ligand-Dose(Low-end-value)" formControlName="ligandDoseLvalue" matInput required>
+                            <mat-error *ngIf="LowendvalueForm.get('ligandDoseLvalue').hasError('required')"></mat-error>
+                        </mat-form-field>
+
+                        <!-- <label path="ligandDoseLvalue" for="series" cssClass="required">Ligand-Dose(Low-end-value)</label>
+                        <input class="form-control" name="ligandDoseLvalue" formControlName="ligandDoseLvalue" [ngClass]="{ 'is-invalid': submitted && f.ligandDoseLvalue.errors }">
                         <div *ngIf="submitted && f.ligandDoseLvalue.errors" class="invalid-feedback">
                             <div *ngIf="f.ligandDoseLvalue.errors.required">Ligand-Dose(Low-end-value) is Required</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-               
+
             </div>
 
-            
+
             <div class="row">
                 <div class="col-sm-12 ">
                     <div class="form-group">

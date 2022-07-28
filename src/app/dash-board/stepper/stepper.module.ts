@@ -49,7 +49,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { StepperRoutingModule } from './stepper-routing.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     StepperRoutingModule,

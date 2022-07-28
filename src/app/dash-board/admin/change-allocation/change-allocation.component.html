@@ -9,29 +9,42 @@
         <div class="row">
             <div class="col-xs-3 col-sm-3">
                 <div class="form-group">
-                    <label path="cbatchNo" for="cbatchNo" cssClass="required">CURATOR BATCH NUMBER :</label>
-                    <input type="text" class="form-control" name="cbatchNo" [(ngModel)]="cbatchNo" autocomplete="off">
+
+                    <mat-form-field style="width:91%;">
+                        <input type="text" matInput placeholder="CURATOR BATCH NUMBER" name="cbatchNo" [(ngModel)]="cbatchNo" autocomplete="off">
+                    </mat-form-field>
+                    <!-- <label path="cbatchNo" for="cbatchNo" cssClass="required">CURATOR BATCH NUMBER :</label>
+                    <input type="text" class="form-control" name="cbatchNo" [(ngModel)]="cbatchNo" autocomplete="off"> -->
 
                 </div>
             </div>
             <div class="col-xs-3 col-sm-3">
                 <div class="form-group">
-                    <label path="curatorName" for="curatorName" cssClass="required">CURRENT CURATOR LIST :</label>
-                    <!-- <input type="text" class="form-control" name="curatorName" formControlName="curatorName" autocomplete="off"> -->
+                    <mat-form-field>
+                        <mat-select placeholder="CURRENT CURATOR LIST :" [(ngModel)]="curatorName">
+                            <mat-option value=''> - Select curator List - </mat-option>
+                            <mat-option *ngFor="let curatorname of curatornames" [value]="curatorname.username">
+                                {{curatorname.username}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <!-- <label path="curatorName" for="curatorName" cssClass="required">CURRENT CURATOR LIST :</label>
                     <select class="form-control" name="curatorName" [(ngModel)]="curatorName">
                         <option value=''> - Select curator List - </option>
     
                         <option *ngFor="let curatorname of curatornames" [value]="curatorname.username">
                             {{curatorname.username}}
                         </option>
-                    </select>
+                    </select> -->
 
                 </div>
             </div>
             <div class="col-xs-3 col-sm-3">
                 <div class="form-group">
-                    <br>
-                    <button type="button" style="margin-top:5px;" (click)="onSearch(cbatchNo,curatorName)" class="btn btn-primary">
+                    <!-- <br> -->
+                    <button type="button" style="margin-top:8px;" (click)="onSearch(cbatchNo,curatorName)" class="btn btn-primary">
                         <i class="fa fa-search "></i> Search</button>
                 </div>
             </div>
@@ -43,22 +56,31 @@
             <div class="col-xs-6 col-sm-6"></div>
             <div class="col-xs-3 col-sm-3">
                 <div class="form-group">
-                    <label path="changeCuratorName" for="changeCuratorName" cssClass="required">CHANGE CURATOR :</label>
-                    <!-- <input type="text" class="form-control" name="curatorName" formControlName="curatorName" autocomplete="off"> -->
+
+                    <mat-form-field>
+                        <mat-select placeholder="CHANGE CURATOR NAME:" [(ngModel)]="changeCuratorName">
+                            <mat-option value=''> - Select curator List - </mat-option>
+                            <mat-option *ngFor="let curatorname of curatornames" [value]="curatorname.username">
+                                {{curatorname.username}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <!-- <label path="changeCuratorName" for="changeCuratorName" cssClass="required">CHANGE CURATOR :</label>
                     <select class="form-control" name="changeCuratorName" [(ngModel)]="changeCuratorName">
                         <option value=''> - Select curator List - </option>
     
                         <option *ngFor="let curatorname of curatornames" [value]="curatorname.username">
                             {{curatorname.username}}
                         </option>
-                    </select>
+                    </select> -->
 
                 </div>
             </div>
             <div class="col-xs-2 col-sm-2">
                 <div class="form-group">
-                    <br>
-                    <button type="button" class="btn btn-primary submit" (click)="onGetSelectedRowData(changeCuratorName)" style="margin-top:6px;">Submit</button>
+                    <!-- <br> -->
+                    <button type="button" class="btn btn-primary submit" (click)="onGetSelectedRowData(changeCuratorName)" style="margin-top:8px;">Submit</button>
                 </div>
             </div>
         </div>

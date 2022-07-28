@@ -115,7 +115,7 @@ export class TaskAllocationComponent implements OnInit {
     this.username = this.authManager.getcurrentUser.username;
     this.taskAllocationManager.alltask(this.username).subscribe(response => {
       this.taskallocations = deserialize<Taskallocation001wb[]>(Taskallocation001wb, response);
-this.taskallocates=this.taskallocations.reverse();
+      this.taskallocates = this.taskallocations.reverse();
       if (this.taskallocations.length > 0) {
         this.gridOptions?.api?.setRowData(this.taskallocates);
       } else {
@@ -156,7 +156,7 @@ this.taskallocates=this.taskallocations.reverse();
         filter: true,
         resizable: true,
         suppressSizeToFit: true,
-        
+
       },
 
       {
@@ -248,10 +248,10 @@ this.taskallocates=this.taskallocations.reverse();
       //   }
       // },
 
-      
+
     ];
   }
- 
+
   onCreatorChange(event: any) {
     let curatorName: string = '';
     for (let i = 0; i < this.curators.length; i++) {
@@ -273,10 +273,10 @@ this.taskallocates=this.taskallocations.reverse();
         break;
       }
     }
-   
+
   }
 
-  
+
 
   private markFormGroupTouched(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach((control: any) => {
@@ -342,10 +342,20 @@ this.taskallocates=this.taskallocations.reverse();
 
   }
 
+  // onUploadMasterData() {
+  //   console.log("Welcome------>>>");
+
+  //   let taskallocation001wb = new Taskallocation001wb();
+  //   taskallocation001wb.insertUser = this.authManager.getcurrentUser.username;
+  //   taskallocation001wb.insertDatetime = new Date();
+  //   this.taskAllocationManager.uploadExcel(taskallocation001wb, this.selectedFile).subscribe((response) => {
+  //   });
+  // }
+
   onReset() {
     this.submitted = false;
     this.TaskAllocationForm.reset();
   }
 
-  }
+}
 

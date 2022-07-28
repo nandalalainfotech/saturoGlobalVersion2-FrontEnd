@@ -5,18 +5,12 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="tanNumber" for="tanNumber" cssClass="required">TAN Number</label>
-                        <input readonly class="form-control" autocomplete="off" name="tanNumber" formControlName="tanNumber" [ngClass]="{ 'is-invalid': submitted && f.tanNumber.errors }">
-                        <!-- <select class="form-control" name="tanNumber" formControlName="tanNumber">
-                           <option value="" hidden> - Select Tan tanNumber - </option>
-                           <option >
-                               {{tanNumber}}
-                           </option> -->
+                        <mat-form-field>
+                            <input readonly="readonly" placeholder="TAN Number" formControlName="tanNumber" matInput required>
+                            <mat-error *ngIf="LigandForm.get('tanNumber').hasError('required')"></mat-error>
+                        </mat-form-field>
 
-                        <div *ngIf="submitted && f.tanNumber.errors" class="invalid-feedback">
-                            <div *ngIf="f.tanNumber.errors.required">Tan number is Required</div>
-                        </div>
-                        <!-- </select> -->
+
                     </div>
                 </div>
 
@@ -49,27 +43,26 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="ligandVersionSlno" for="ligandVersionSlno" cssClass="required">Ligand-Version</label>
-                        <select class="form-control" name="ligandVersionSlno" formControlName="ligandVersionSlno" (blur)="onBlurEvent($event)">
-                            <option> - Select Ligand Version - </option>
-                            <option *ngFor="let ligandVersion of ligandVersions" [value]="ligandVersion.id">
-                                {{ligandVersion.ligandVersion}}
-                            </option>
-                        </select>
+                        <mat-form-field>
+                            <mat-select formControlName="ligandVersionSlno" placeholder="Ligand-Version">
+                                <mat-option *ngFor="let ligandVersion of ligandVersions" [value]="ligandVersion.id">
+                                    {{ligandVersion.ligandVersion}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
                     </div>
                 </div>
 
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="ligandTypeSlno" for="ligandTypeSlno" cssClass="required">Ligand-Type</label>
-                        <select class="form-control" name="ligandTypeSlno" formControlName="ligandTypeSlno">
-                            <option value=''> - Select Ligand Types - </option>
-                            <option *ngFor="let ligandtype of ligandtypes" [value]="ligandtype.id">
-                                {{ligandtype.ligandtype}}
-                            </option>
-                        </select>
-
+                        <mat-form-field>
+                            <mat-select formControlName="ligandTypeSlno" placeholder="Ligand-Type">
+                                <mat-option *ngFor="let ligandtype of ligandtypes" [value]="ligandtype.id">
+                                    {{ligandtype.ligandtype}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
                 </div>
 
@@ -78,43 +71,50 @@
             <div class="row">
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="identifier1" for="series" cssClass="required">Identifier 1</label>
-                        <input class="form-control" autocomplete="off" name="identifier1" formControlName="identifier1">
+                        <mat-form-field>
+                            <input matInput placeholder="Identifier 1" formControlName="identifier1">
+                        </mat-form-field>
                     </div>
                 </div>
 
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="identifier2" for="series" cssClass="required">Identifier 2</label>
-                        <input class="form-control" autocomplete="off" name="identifier2" formControlName="identifier2">
+                        <mat-form-field>
+                            <input matInput placeholder="Identifier 2" formControlName="identifier2">
+                        </mat-form-field>
                     </div>
                 </div>
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="identifier3" for="series" cssClass="required">Identifier 3</label>
-                        <input class="form-control" autocomplete="off" name="identifier3" formControlName="identifier3">
+                        <mat-form-field>
+                            <input matInput placeholder="Identifier 3" formControlName="identifier3">
+                        </mat-form-field>
+
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="collectionId" for="series" cssClass="required">Collection-id</label>
-                        <input class="form-control" autocomplete="off" name="collectionId" formControlName="collectionId">
+                        <mat-form-field>
+                            <input matInput placeholder="Collection-id" formControlName="collectionId">
+                        </mat-form-field>
                     </div>
                 </div>
 
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="locator" for="series" cssClass="required">Ligand Locator</label>
-                        <input class="form-control" autocomplete="off" name="locator" formControlName="locator">
+                        <mat-form-field>
+                            <input matInput placeholder="Ligand Locator" formControlName="locator">
+                        </mat-form-field>
                     </div>
                 </div>
 
                 <div class="col-xs-4 col-sm-4">
                     <div class="form-group">
-                        <label path="ligandDetail" for="series" cssClass="required">Ligand-detail</label>
-                        <input class="form-control" autocomplete="off" name="ligandDetail" formControlName="ligandDetail">
+                        <mat-form-field>
+                            <input matInput placeholder="Ligand-detail" formControlName="ligandDetail">
+                        </mat-form-field>
                     </div>
                 </div>
             </div>
@@ -124,22 +124,31 @@
                 <div class="row">
                     <div class="col-xs-4 col-sm-4">
                         <div class="form-group">
-                            <label path="diseaseName1" for="series" cssClass="required">Original-disease-name 1</label>
-                            <input class="form-control" autocomplete="off" name="diseaseName1" formControlName="diseaseName1">
+                            <!-- <label path="diseaseName1" for="series" cssClass="required">Original-disease-name 1</label>
+                            <input class="form-control" autocomplete="off" name="diseaseName1" formControlName="diseaseName1"> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Original-disease-name 1" formControlName="diseaseName1">
+                            </mat-form-field>
                         </div>
                     </div>
 
                     <div class="col-xs-4 col-sm-4">
                         <div class="form-group">
-                            <label path="diseaseName2" for="series" cssClass="required">Original-disease-name 2</label>
-                            <input class="form-control" autocomplete="off" name="diseaseName2" formControlName="diseaseName2">
+                            <!-- <label path="diseaseName2" for="series" cssClass="required">Original-disease-name 2</label>
+                            <input class="form-control" autocomplete="off" name="diseaseName2" formControlName="diseaseName2"> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Original-disease-name 2" formControlName="diseaseName2">
+                            </mat-form-field>
                         </div>
                     </div>
 
                     <div class="col-xs-4 col-sm-4">
                         <div class="form-group">
-                            <label path="diseaseName3" for="series" cssClass="required">Original-disease-name 3</label>
-                            <input class="form-control" autocomplete="off" name="diseaseName3" formControlName="diseaseName3">
+                            <!-- <label path="diseaseName3" for="series" cssClass="required">Original-disease-name 3</label>
+                            <input class="form-control" autocomplete="off" name="diseaseName3" formControlName="diseaseName3"> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Original-disease-name 3" formControlName="diseaseName3">
+                            </mat-form-field>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,6 @@ import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgGridModule } from 'ag-grid-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchSettingComponent } from './dashboard/search-setting/search-setting.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AssayCheckedComponent } from './shared/assay-checked/assay-checked.component';
@@ -55,7 +54,6 @@ import { LigandDoseHighlowunitPopupComponent } from './shared/ligand-dose-highlo
 		CheckedComponent,
 		AssayCheckedComponent,
 		MeasurementCheckedComponent,
-		SearchSettingComponent,
 		ReviewerViewComponent,
 		ToxicityTypePopupComponent,
 		CategoryFunctionPopupComponent,

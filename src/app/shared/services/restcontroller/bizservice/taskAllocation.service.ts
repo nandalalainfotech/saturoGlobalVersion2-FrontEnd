@@ -54,6 +54,7 @@ export class TaskAllocationManager extends BaseService {
     }
 
     tasksave(taskallocation001wb: Taskallocation001wb, selectedFile: any) {
+       
         let formData: any = new FormData();
         formData.append("filename", selectedFile.name);
         formData.append("file", selectedFile, selectedFile.name);
@@ -64,6 +65,18 @@ export class TaskAllocationManager extends BaseService {
             catchError(this.errorMgmt)
         )
     }
+
+    // uploadExcel(taskallocation001wb: Taskallocation001wb,selectedFile: any) {
+    //     console.log("selectedFile------>>>",selectedFile);
+    //     let formData: any = new FormData();
+    //     formData.append("filename", selectedFile.name);
+    //     formData.append("file", selectedFile, selectedFile.name);
+    //     formData.append("insertUser", taskallocation001wb.insertUser);
+    //     formData.append("insertDatetime", taskallocation001wb.insertDatetime);
+    //     return this.postCallService(`${this.taskallocationUrl}` + "/uploadExcel", {}, formData).pipe(
+    //         catchError(this.errorMgmt)
+    //     )
+    // }
 
     errorMgmt(error: HttpErrorResponse) {
         let errorMessage = '';
