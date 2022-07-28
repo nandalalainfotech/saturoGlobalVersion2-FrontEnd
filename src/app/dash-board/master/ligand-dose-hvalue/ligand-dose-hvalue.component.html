@@ -1,22 +1,28 @@
 <fieldset class="scheduler-border">
     <legend class="scheduler-border">Ligand-Dose(High-end-value)</legend>
     <div class="formData">
-        <form [formGroup]="HighendvalueForm" (ngSubmit)="onHighendvalueClick($event, HighendvalueForm)" >
-            <div class="row">      
+        <form [formGroup]="HighendvalueForm" (ngSubmit)="onHighendvalueClick($event, HighendvalueForm)">
+            <div class="row">
                 <div class="col-xs-3 col-sm-3">
                     <div class="form-group">
-                        <label path="ligandDoseHvalue" for="series" cssClass="required">Ligand-Dose(High-end-value)</label>
+
+                        <mat-form-field style="margin-top: 20px;">
+                            <input placeholder="Ligand-Dose(High-end-value)" formControlName="ligandDoseHvalue" matInput required>
+                            <mat-error *ngIf="HighendvalueForm.get('ligandDoseHvalue').hasError('required')"></mat-error>
+                        </mat-form-field>
+
+                        <!-- <label path="ligandDoseHvalue" for="series" cssClass="required">Ligand-Dose(High-end-value)</label>
                         <input class="form-control" name="ligandDoseHvalue" formControlName="ligandDoseHvalue"
                             [ngClass]="{ 'is-invalid': submitted && f.ligandDoseHvalue.errors }">
                         <div *ngIf="submitted && f.ligandDoseHvalue.errors" class="invalid-feedback">
                             <div *ngIf="f.ligandDoseHvalue.errors.required">Ligand-Dose(High-end-value) is Required</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-               
+
             </div>
 
-            
+
             <div class="row">
                 <div class="col-sm-12 ">
                     <div class="form-group">

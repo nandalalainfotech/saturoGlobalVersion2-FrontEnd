@@ -1,22 +1,27 @@
 <fieldset class="scheduler-border">
     <legend class="scheduler-border">Ligand-Dose(single-value)</legend>
     <div class="formData">
-        <form [formGroup]="SinglevalueForm" (ngSubmit)="onSinglevalueClick($event, SinglevalueForm)" >
-            <div class="row">      
+        <form [formGroup]="SinglevalueForm" (ngSubmit)="onSinglevalueClick($event, SinglevalueForm)">
+            <div class="row">
                 <div class="col-xs-3 col-sm-3">
                     <div class="form-group">
-                        <label path="ligandDoseSvalue" for="series" cssClass="required">Ligand-Dose(single-value)</label>
-                        <input class="form-control" name="ligandDoseSvalue" formControlName="ligandDoseSvalue"
-                            [ngClass]="{ 'is-invalid': submitted && f.ligandDoseSvalue.errors }">
+
+                        <mat-form-field style="margin-top: 20px;">
+                            <input placeholder="Ligand-Dose(single-value)" formControlName="ligandDoseSvalue" matInput required>
+                            <mat-error *ngIf="SinglevalueForm.get('ligandDoseSvalue').hasError('required')"></mat-error>
+                        </mat-form-field>
+
+                        <!-- <label path="ligandDoseSvalue" for="series" cssClass="required">Ligand-Dose(single-value)</label>
+                        <input class="form-control" name="ligandDoseSvalue" formControlName="ligandDoseSvalue" [ngClass]="{ 'is-invalid': submitted && f.ligandDoseSvalue.errors }">
                         <div *ngIf="submitted && f.ligandDoseSvalue.errors" class="invalid-feedback">
                             <div *ngIf="f.ligandDoseSvalue.errors.required">Ligand-Dose(single-value) is Required</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-               
+
             </div>
 
-            
+
             <div class="row">
                 <div class="col-sm-12 ">
                     <div class="form-group">

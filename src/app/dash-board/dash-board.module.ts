@@ -92,6 +92,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { DropdownModule } from 'primeng/dropdown';
+import { SearchSettingComponent } from './search-setting/search-setting.component';
 
 @NgModule({
 
@@ -108,6 +109,7 @@ import { DropdownModule } from 'primeng/dropdown';
         ReportComponent,
         AdminComponent,
         StatusComponent,
+        SearchSettingComponent,
         // ReviewerWorkStatusComponent,
         // MyWorkComponent,
         // BreadcrumbComponent

@@ -4,11 +4,17 @@
             <div class="row">
                 <div class="col-xs-3 col-sm-3">
                     <div class="form-group">
-                        <label path="united" for="series" cssClass="required" style="margin-top: 20px;">Unit(Low-end-value)</label>
+
+                        <mat-form-field style="margin-top: 20px;">
+                            <input placeholder="Unit(Low-end-value)" formControlName="united" matInput required>
+                            <mat-error *ngIf="UnitLowendForm.get('united').hasError('required')"></mat-error>
+                        </mat-form-field>
+
+                        <!-- <label path="united" for="series" cssClass="required" style="margin-top: 20px;">Unit(Low-end-value)</label>
                         <input class="form-control" name="united" formControlName="united" [ngClass]="{ 'is-invalid': submitted && f.united.errors }">
                         <div *ngIf="submitted && f.united.errors" class="invalid-feedback">
                             <div *ngIf="f.united.errors.required">Unit(Low-end-value) is Required</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 

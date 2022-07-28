@@ -582,14 +582,14 @@ export class AssayComponent implements OnInit {
       // console.log("Testing");
       this.assayGridOptions?.api?.setRowData([]);
       this.assayManager.allassayTan(this.username, this.tanNo).subscribe(response => {
-        setTimeout(() => {
+        // setTimeout(() => {
           this.tanGridassay = response;
           if (this.tanGridassay) {
             this.assayGridOptions?.api?.setRowData(this.tanGridassay);
           } else {
             this.assayGridOptions?.api?.setRowData([]);
           }
-        }, 100);
+        // });
       });
     }
 

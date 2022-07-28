@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SearchSettingComponent } from '../dashboard/search-setting/search-setting.component';
 import { DashBoardComponent } from './dash-board.component';
+import { SearchSettingComponent } from './search-setting/search-setting.component';
 
 const routes: Routes = [
   {
@@ -58,7 +58,7 @@ const routes: Routes = [
 
       {
         path: 'app-search-setting',
-        // loadChildren: () => import("./master/master.module").then(m => m.MasterModule)
+        // loadChildren: () => import("./search-setting/search-setting.module").then(m => m.SearchSettingModule)
         component: SearchSettingComponent,
       },
      
